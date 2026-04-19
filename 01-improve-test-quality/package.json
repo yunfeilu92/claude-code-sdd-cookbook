@@ -5,8 +5,8 @@
   "scripts": {
     "test": "vitest run --coverage",
     "test:mutation": "stryker run",
-    "demo:before": "cp _baseline/window.test.js tests/intent/window.test.js && echo '→ 现在是 apply-only 状态（3 测试）'",
-    "demo:after": "cp _baseline/window.evaluator.test.js tests/intent/window.test.js && echo '→ 现在是 evaluator-done 状态（21 测试）'"
+    "demo:before": "cp _baseline/before.js tests/intent/window.test.js && echo '→ 现在是 apply-only 状态（3 测试）'",
+    "demo:after": "cp _baseline/after.js tests/intent/window.test.js && echo '→ 现在是 evaluator-done 状态（21 测试）'"
   },
   "devDependencies": {
     "@stryker-mutator/core": "^8.7.1",

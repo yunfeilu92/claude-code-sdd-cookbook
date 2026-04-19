@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { recognizeWindowIntent } from '../src/intent/window.js';
+import { recognizeWindowIntent } from '../../src/intent/window.js';
 
 describe('recognizeWindowIntent (apply 阶段 happy-path only)', () => {
   it('[SPEC-001] 打开左前窗 → open_window + lf', () => {
