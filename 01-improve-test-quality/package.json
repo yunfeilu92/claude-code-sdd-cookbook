@@ -1,0 +1,17 @@
+{
+  "name": "ch01-improve-test-quality",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run --coverage",
+    "test:mutation": "stryker run",
+    "demo:before": "cp _baseline/window.test.js tests/intent/window.test.js && echo '→ 现在是 apply-only 状态（3 测试）'",
+    "demo:after": "cp _baseline/window.evaluator.test.js tests/intent/window.test.js && echo '→ 现在是 evaluator-done 状态（21 测试）'"
+  },
+  "devDependencies": {
+    "@stryker-mutator/core": "^8.7.1",
+    "@stryker-mutator/vitest-runner": "^8.7.1",
+    "@vitest/coverage-v8": "^2.1.8",
+    "vitest": "^2.1.8"
+  }
+}
