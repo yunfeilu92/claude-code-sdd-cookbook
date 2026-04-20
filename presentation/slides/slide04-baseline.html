@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #09051B; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-image: url('bg-dark.jpg');
+  background-size: cover;
+}
+.title-bar { padding: 24pt 48pt 12pt 48pt; }
+.title-bar h1 { color: #FFFFFF; font-size: 24pt; margin: 0; font-weight: bold; }
+.body-content { display: flex; flex-direction: row; padding: 0 48pt; gap: 24pt; flex: 1; }
+.column { flex: 1; }
+.section-label { margin: 0 0 8pt 0; padding: 0 0 6pt 0; border-bottom: 2pt solid #0EEDAF; }
+.section-label p { color: #0EEDAF; font-size: 11pt; font-weight: bold; margin: 0; }
+.service-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4pt;
+  padding: 8pt 12pt;
+  margin: 6pt 0;
+}
+.service-item h4 { color: #FF9900; font-size: 11pt; margin: 0 0 3pt 0; }
+.service-item p { color: #D1D5DB; font-size: 9pt; margin: 0; line-height: 1.4; }
+</style>
+</head>
+<body>
+<div class="title-bar"><h1>不可绕过的底座：PLAN-0 + 5 个失败模式</h1></div>
+<div class="body-content">
+  <div class="column">
+    <div class="section-label"><p>PLAN-0 — Anthropic 官方四步</p></div>
+    <div class="service-item"><h4>1. Explore（Plan Mode）</h4><p>读文件、提问，不改代码</p></div>
+    <div class="service-item"><h4>2. Plan（Plan Mode）</h4><p>Claude 写详细实现方案</p></div>
+    <div class="service-item"><h4>3. Implement（Normal Mode）</h4><p>边写边验证</p></div>
+    <div class="service-item"><h4>4. Commit</h4><p>描述性的 commit message</p></div>
+    <div class="service-item"><h4>最高杠杆点</h4><p>"Give Claude a way to verify its work"</p></div>
+  </div>
+  <div class="column">
+    <div class="section-label"><p>5 个失败模式（任何方案都要防）</p></div>
+    <div class="service-item"><h4>1. Kitchen Sink Sessions</h4><p>混杂任务污染 context</p></div>
+    <div class="service-item"><h4>2. Repetitive Corrections</h4><p>反复纠正同一错误（≥2 次必 reset）</p></div>
+    <div class="service-item"><h4>3. Bloated Specs / CLAUDE.md</h4><p>规范膨胀，关键约束被淹没</p></div>
+    <div class="service-item"><h4>4. Trust-then-Verify Gap ★</h4><p>没验证就信任 — 测试痛点根源</p></div>
+    <div class="service-item"><h4>5. Infinite Exploration</h4><p>Plan Mode 不进入 Implement</p></div>
+  </div>
+</div>
+</body>
+</html>

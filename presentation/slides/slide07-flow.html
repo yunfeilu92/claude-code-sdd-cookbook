@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #09051B; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-image: url('bg-dark.jpg');
+  background-size: cover;
+}
+.title-bar { padding: 24pt 48pt 12pt 48pt; }
+.title-bar h1 { color: #FFFFFF; font-size: 24pt; margin: 0; font-weight: bold; }
+.body-content { display: flex; flex-direction: row; padding: 0 48pt; gap: 24pt; flex: 1; }
+.column { flex: 1; }
+.section-label { margin: 0 0 8pt 0; padding: 0 0 6pt 0; border-bottom: 2pt solid #0EEDAF; }
+.section-label p { color: #0EEDAF; font-size: 11pt; font-weight: bold; margin: 0; }
+.service-item { background: rgba(255, 255, 255, 0.05); border-radius: 4pt; padding: 8pt 12pt; margin: 6pt 0; }
+.service-item h4 { color: #FF9900; font-size: 10pt; margin: 0 0 3pt 0; }
+.service-item p { color: #D1D5DB; font-size: 9pt; margin: 0; line-height: 1.4; }
+</style>
+</head>
+<body>
+<div class="title-bar"><h1>开发者视角：命令一行不变</h1></div>
+<div class="body-content">
+  <div class="column">
+    <div class="section-label"><p>开发者实际敲的命令（3 条）</p></div>
+    <div class="service-item"><h4>/opsx:propose "需求"</h4><p>5 秒生成 proposal/specs/tasks（自动 5 步任务）</p></div>
+    <div class="service-item"><h4>/opsx:apply</h4><p>Claude Code 自动跑完 5 步闭环（5–15 分钟）</p></div>
+    <div class="service-item"><h4>/opsx:archive</h4><p>PR merge 后归档 spec 成 SSOT</p></div>
+    <div class="service-item"><h4>体感：和裸 OpenSpec 完全一样</h4><p>不用学新命令、不用记新步骤</p></div>
+  </div>
+  <div class="column">
+    <div class="section-label"><p>apply 阶段内部展开（自动）</p></div>
+    <div class="service-item"><h4>Task 1 implement</h4><p>Generator Agent 写 src/</p></div>
+    <div class="service-item"><h4>Task 2 test-write + Task 3 test-run</h4><p>Generator 写 happy path + 跑通</p></div>
+    <div class="service-item"><h4>Task 4 evaluator ★</h4><p>test-evaluator subagent 独立 context 补测试</p></div>
+    <div class="service-item"><h4>Task 5 mutation ★</h4><p>Stryker 跑 → 不达标循环回 Task 4</p></div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #09051B; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-image: url('bg-dark.jpg');
+  background-size: cover;
+}
+.title-bar { padding: 24pt 48pt 12pt 48pt; }
+.title-bar h1 { color: #FFFFFF; font-size: 24pt; margin: 0; font-weight: bold; }
+.subtitle { color: #9CA3AF; font-size: 11pt; margin: 4pt 0 0 0; }
+.body-content { display: flex; flex-direction: row; padding: 0 48pt; gap: 16pt; flex: 1; }
+.option {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 6pt;
+  padding: 16pt 20pt;
+  border-top: 3pt solid #FF706E;
+}
+.option.alt { border-top-color: #0EEDAF; }
+.option h3 { color: #FF706E; font-size: 14pt; margin: 0 0 12pt 0; font-weight: bold; }
+.option.alt h3 { color: #0EEDAF; }
+.feature {
+  display: flex;
+  justify-content: space-between;
+  padding: 8pt 0;
+  border-bottom: 1pt solid rgba(255,255,255,0.08);
+}
+.feature p { margin: 0; }
+.feature .label { color: #D1D5DB; font-size: 10pt; }
+.feature .value { color: #FFFFFF; font-size: 11pt; font-weight: bold; }
+.vs-divider { display: flex; align-items: center; justify-content: center; width: 40pt; }
+.vs-text { color: #6B7280; font-size: 16pt; font-weight: bold; }
+</style>
+</head>
+<body>
+<div class="title-bar">
+  <h1>真实 Demo：「打开 X 窗」意图识别器</h1>
+  <p class="subtitle">5 分钟可复现 — vitest + stryker 真跑出来的数字（非 mock）</p>
+</div>
+<div class="body-content">
+  <div class="option">
+    <h3>BEFORE — apply 完成（happy path）</h3>
+    <div class="feature"><p class="label">测试数</p><p class="value">3</p></div>
+    <div class="feature"><p class="label">行覆盖率</p><p class="value">96.15%</p></div>
+    <div class="feature"><p class="label">分支覆盖率</p><p class="value">64.28%</p></div>
+    <div class="feature"><p class="label">Mutation Score</p><p class="value">64.06%</p></div>
+    <div class="feature"><p class="label">存活 mutant（漏掉的 bug）</p><p class="value">20</p></div>
+    <div class="feature"><p class="label">PR 表象</p><p class="value">看似可合并</p></div>
+  </div>
+  <div class="vs-divider"><p class="vs-text">→</p></div>
+  <div class="option alt">
+    <h3>AFTER — evaluator + mutation 闭环</h3>
+    <div class="feature"><p class="label">测试数</p><p class="value">21</p></div>
+    <div class="feature"><p class="label">行覆盖率</p><p class="value">100%</p></div>
+    <div class="feature"><p class="label">分支覆盖率</p><p class="value">100%</p></div>
+    <div class="feature"><p class="label">Mutation Score</p><p class="value">92.19%</p></div>
+    <div class="feature"><p class="label">存活 mutant（剩 = 死代码）</p><p class="value">5</p></div>
+    <div class="feature"><p class="label">PR 表象</p><p class="value">真实可合并</p></div>
+  </div>
+</div>
+</body>
+</html>

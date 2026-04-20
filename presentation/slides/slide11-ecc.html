@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #09051B; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-image: url('bg-dark.jpg');
+  background-size: cover;
+}
+.title-bar { padding: 24pt 48pt 12pt 48pt; }
+h1 { color: #FFFFFF; font-size: 24pt; margin: 0; font-weight: bold; }
+.subtitle { color: #9CA3AF; font-size: 10pt; margin: 4pt 0 0 0; }
+.body-content { display: flex; flex-direction: row; padding: 0 48pt; gap: 20pt; flex: 1; }
+.metrics { display: flex; flex-direction: column; gap: 8pt; width: 300pt; }
+.metric-row { display: flex; gap: 8pt; }
+.metric-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 6pt;
+  padding: 14pt 16pt;
+  flex: 1;
+  border-left: 3pt solid #0EEDAF;
+}
+.metric-card h2 { color: #0EEDAF; font-size: 22pt; margin: 0 0 2pt 0; font-weight: bold; }
+.metric-card p { color: #9CA3AF; font-size: 9pt; margin: 0; }
+.details { flex: 1; padding: 4pt 0 0 8pt; }
+.details h3 { color: #FF9900; font-size: 12pt; margin: 0 0 10pt 0; font-weight: bold; }
+.details ul { color: #D1D5DB; font-size: 10pt; line-height: 1.7; padding-left: 14pt; margin: 0; }
+</style>
+</head>
+<body>
+<div class="title-bar">
+  <h1>ECC — 当前最完整 Harness 参考实现</h1>
+  <p class="subtitle">github.com/affaan-m/everything-claude-code · v2 框架 9 件全中</p>
+</div>
+<div class="body-content">
+  <div class="metrics">
+    <div class="metric-row">
+      <div class="metric-card"><h2>161K</h2><p>GitHub stars（3 月长出）</p></div>
+      <div class="metric-card"><h2>25K</h2><p>forks</p></div>
+    </div>
+    <div class="metric-row">
+      <div class="metric-card"><h2>48</h2><p>专门 subagents</p></div>
+      <div class="metric-card"><h2>183</h2><p>skills（按主题分类）</p></div>
+    </div>
+    <div class="metric-row">
+      <div class="metric-card"><h2>6</h2><p>MCP servers</p></div>
+      <div class="metric-card"><h2>15</h2><p>语言规则集</p></div>
+    </div>
+  </div>
+  <div class="details">
+    <h3>8 个值得抄的技术手段</h3>
+    <ul>
+      <li>GateGuard Fact-Force（首次编辑前强制 Read）</li>
+      <li>Hook Profile 分级（minimal/standard/strict）</li>
+      <li>Governance Capture（secrets 自动归档）</li>
+      <li>跨 IDE 适配（一源出 5 IDE 配置）</li>
+      <li>选择性安装 + 状态追踪</li>
+      <li>Continuous Learning Hook（模式捕获）</li>
+      <li>Worktrees 编排（并行 agent 隔离）</li>
+      <li>harness-audit 脚本（自查健康度）</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

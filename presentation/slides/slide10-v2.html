@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #09051B; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-image: url('bg-dark.jpg');
+  background-size: cover;
+}
+.title-bar { padding: 24pt 48pt 8pt 48pt; }
+.title-bar h1 { color: #FFFFFF; font-size: 22pt; margin: 0; font-weight: bold; }
+.subtitle { color: #9CA3AF; font-size: 10pt; margin: 4pt 0 0 0; }
+.body-content { display: flex; flex-direction: column; padding: 0 48pt 12pt 48pt; gap: 8pt; flex: 1; }
+.tier { background: rgba(255, 255, 255, 0.04); border-radius: 4pt; padding: 8pt 14pt; border-left: 3pt solid #0EEDAF; }
+.tier.t2 { border-left-color: #FF9900; }
+.tier.t3 { border-left-color: #BC007A; }
+.tier h4 { color: #0EEDAF; font-size: 12pt; margin: 0 0 4pt 0; font-weight: bold; }
+.tier.t2 h4 { color: #FF9900; }
+.tier.t3 h4 { color: #BC007A; }
+.tier p { color: #D1D5DB; font-size: 10pt; margin: 0; line-height: 1.4; }
+.ourkit { color: #0EEDAF; font-weight: bold; }
+</style>
+</head>
+<body>
+<div class="title-bar">
+  <h1>Harness Engineering v2：3 + 4 + 2 分层</h1>
+  <p class="subtitle">从 7 个成熟产品（Anthropic/OpenAI/Google/AWS/LangGraph/CrewAI/Inngest）反推</p>
+</div>
+<div class="body-content">
+  <div class="tier">
+    <h4>Tier 1 — 普适必备（任何 Agent 都需要，3/3 厂商共识）</h4>
+    <p>① State（持久化）　　② Capability（工具/MCP）　　③ Observability ← 我们三件套主战场</p>
+  </div>
+  <div class="tier t2">
+    <h4>Tier 2 — 生产部署（多人/规模化必需）</h4>
+    <p>④ Governance（权限/guardrail） &nbsp;&nbsp; ⑤ Multi-agent &nbsp;&nbsp; ⑥ Cost &nbsp;&nbsp; ⑦ Rollback（checkpoint/interrupt）</p>
+  </div>
+  <div class="tier t3">
+    <h4>Tier 3 — 企业云原生（合规/多租户）</h4>
+    <p>⑧ Identity（per-user OAuth） &nbsp;&nbsp; ⑨ Isolation（sandbox/microVM）</p>
+  </div>
+  <div class="tier">
+    <h4>v2 vs 旧 5 件套</h4>
+    <p>新增 Observability/Cost/Rollback/Identity/Isolation 5 件 — 用产品反推替代概念分类，Cleanup 取消独立件</p>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #09051B; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-image: url('bg-dark.jpg');
+  background-size: cover;
+}
+.title-bar { padding: 18pt 48pt 6pt 48pt; }
+h1 { color: #FFFFFF; font-size: 22pt; margin: 0; font-weight: bold; }
+.subtitle { color: #9CA3AF; font-size: 9pt; margin: 3pt 0 0 0; }
+.body-content {
+  display: flex;
+  flex-direction: row;
+  padding: 4pt 48pt 14pt 48pt;
+  gap: 14pt;
+  flex: 1;
+}
+.col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5pt;
+}
+.layer {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 3pt;
+  padding: 6pt 10pt;
+  border-left: 3pt solid #6B7280;
+  flex: 1;
+}
+.layer.hot { border-left-color: #0EEDAF; background: rgba(14, 237, 175, 0.08); }
+.layer.crit { border-left-color: #FF9900; background: rgba(255, 153, 0, 0.08); }
+.layer.gov { border-left-color: #BC007A; background: rgba(188, 0, 122, 0.08); }
+.layer h4 {
+  color: #FFFFFF;
+  font-size: 10pt;
+  margin: 0 0 2pt 0;
+  font-weight: bold;
+}
+.layer p {
+  color: #D1D5DB;
+  font-size: 8pt;
+  margin: 0;
+  line-height: 1.3;
+}
+.layer.hot p, .layer.crit p { color: #FFFFFF; }
+</style>
+</head>
+<body>
+<div class="title-bar">
+  <h1>ECC 8 层完整架构（一图速览）</h1>
+  <p class="subtitle">github.com/affaan-m/everything-claude-code · 161K★</p>
+</div>
+<div class="body-content">
+  <div class="col">
+    <div class="layer">
+      <h4>L8 元层 — 哲学/原则</h4>
+      <p>SOUL.md（Agent-First 哲学） · WORKING-CONTEXT · RULES.md（Must Always/Never）</p>
+    </div>
+    <div class="layer">
+      <h4>L1 入口 — 文档目录</h4>
+      <p>AGENTS.md（48 agent 索引） · CLAUDE.md（项目规范+slash 命令） · 8 个根级 .md</p>
+    </div>
+    <div class="layer">
+      <h4>L2 配置 — 身份与团队</h4>
+      <p>.claude/identity.json · team/*.json · enterprise/controls.md · homunculus/instincts/</p>
+    </div>
+    <div class="layer hot">
+      <h4>L3 Hooks ★ — 运行时生命周期</h4>
+      <p>8 个 PreToolUse（gateguard-fact-force / governance-capture / mcp-health-check 等） · Post · SessionStart · PreCompact · ECC_HOOK_PROFILE 三档</p>
+    </div>
+  </div>
+  <div class="col">
+    <div class="layer crit">
+      <h4>L4 Capability ★ — 能力主体</h4>
+      <p>48 Subagents（planner / code-reviewer × 9 lang / build-resolver × 8 / tdd-guide / loop-operator / harness-optimizer） · 183 Skills · 6 MCP（github/context7/exa/memory/playwright/seq-thinking）</p>
+    </div>
+    <div class="layer">
+      <h4>L5 规则 — 多语言规范</h4>
+      <p>common/（10 文件：agents/code-review/git-workflow/security/testing 等） + 15 语言专项目录</p>
+    </div>
+    <div class="layer gov">
+      <h4>L6 治理 ★ — 合规与自省</h4>
+      <p>enterprise/controls.md（access + audit allowlist） · governance-capture hook（secrets/policy 自动归档） · homunculus/instincts</p>
+    </div>
+    <div class="layer">
+      <h4>L7 脚本 — 自动化基础设施</h4>
+      <p>30+ Node/Shell · ecc.js CLI · install-plan/apply · orchestrate-worktrees · harness-audit · sync-ecc-to-codex</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

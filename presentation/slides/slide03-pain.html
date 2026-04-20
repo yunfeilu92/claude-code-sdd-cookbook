@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #09051B; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-image: url('bg-dark.jpg');
+  background-size: cover;
+}
+.title-bar { padding: 24pt 48pt 16pt 48pt; }
+h1 { color: #FFFFFF; font-size: 24pt; margin: 0; font-weight: bold; }
+.body-content { display: flex; flex-direction: row; padding: 0 48pt; gap: 20pt; flex: 1; }
+.metrics { display: flex; flex-direction: column; gap: 8pt; width: 300pt; }
+.metric-row { display: flex; gap: 8pt; }
+.metric-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 6pt;
+  padding: 14pt 16pt;
+  flex: 1;
+  border-left: 3pt solid #0EEDAF;
+}
+.metric-card.warn { border-left-color: #FF706E; }
+.metric-card h2 { color: #0EEDAF; font-size: 22pt; margin: 0 0 2pt 0; font-weight: bold; }
+.metric-card.warn h2 { color: #FF706E; }
+.metric-card p { color: #9CA3AF; font-size: 9pt; margin: 0; }
+.details { flex: 1; padding: 4pt 0 0 8pt; }
+.details h3 { color: #FF9900; font-size: 12pt; margin: 0 0 10pt 0; font-weight: bold; }
+.details ul { color: #D1D5DB; font-size: 11pt; line-height: 1.8; padding-left: 16pt; margin: 0; }
+</style>
+</head>
+<body>
+<div class="title-bar"><h1>现状：覆盖率漂亮，QA 还是抓 Bug</h1></div>
+<div class="body-content">
+  <div class="metrics">
+    <div class="metric-row">
+      <div class="metric-card"><h2>96%</h2><p>行覆盖率（看起来很美）</p></div>
+      <div class="metric-card warn"><h2>64%</h2><p>真实测试有效率（mutation）</p></div>
+    </div>
+    <div class="metric-row">
+      <div class="metric-card warn"><h2>20</h2><p>潜伏的真实 bug 数</p></div>
+      <div class="metric-card warn"><h2>~30%</h2><p>QA 阶段返工率</p></div>
+    </div>
+    <div class="metric-row">
+      <div class="metric-card"><h2>3</h2><p>AI 自动写的测试数</p></div>
+      <div class="metric-card warn"><h2>0</h2><p>覆盖到的边界异常</p></div>
+    </div>
+  </div>
+  <div class="details">
+    <h3>根因（黄卓斌 AIDLC Q2）</h3>
+    <ul>
+      <li>AI apply 阶段只写 happy path</li>
+      <li>行覆盖率虚高：每行执行过 ≠ 每个分支被验证</li>
+      <li>缺 Generator-Evaluator 反馈循环</li>
+      <li>"Agent 自评总是过于乐观"</li>
+      <li>QA 成为 AI 速度的瓶颈</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

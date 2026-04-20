@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #09051B; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-image: url('bg-dark.jpg');
+  background-size: cover;
+}
+.title-bar { padding: 24pt 48pt 12pt 48pt; }
+.title-bar h1 { color: #FFFFFF; font-size: 24pt; margin: 0; font-weight: bold; }
+.body-content { display: flex; flex-direction: column; padding: 0 48pt; gap: 8pt; flex: 1; }
+.opt-row { display: flex; flex-direction: row; gap: 12pt; }
+.opt-card {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4pt;
+  padding: 12pt 14pt;
+  border-top: 2pt solid #0EEDAF;
+}
+.opt-card h4 { color: #FFFFFF; font-size: 11pt; margin: 0 0 6pt 0; font-weight: bold; }
+.opt-card p { color: #9CA3AF; font-size: 9pt; margin: 0 0 6pt 0; line-height: 1.5; }
+.impact { background: rgba(14, 237, 175, 0.12); border-radius: 2pt; padding: 3pt 8pt; display: inline-block; margin-top: 4pt; }
+.impact p { color: #0EEDAF; font-size: 8pt; font-weight: bold; margin: 0; }
+.summary { background: rgba(255, 153, 0, 0.1); border-left: 3pt solid #FF9900; border-radius: 0 4pt 4pt 0; padding: 10pt 16pt; margin-top: 4pt; }
+.summary p { color: #FF9900; font-size: 10pt; margin: 0; font-weight: bold; }
+</style>
+</head>
+<body>
+<div class="title-bar"><h1>三件套总览：零摩擦、全反馈</h1></div>
+<div class="body-content">
+  <div class="opt-row">
+    <div class="opt-card">
+      <h4>① OpenSpec AGENTS.md 模板</h4>
+      <p>在 tasks.md 强制 5 步：implement → test-write → test-run → evaluator → mutation。改 markdown，不改基础设施。</p>
+      <div class="impact"><p>立即让 AI apply 自动写测试</p></div>
+    </div>
+    <div class="opt-card">
+      <h4>② test-evaluator subagent</h4>
+      <p>独立 context 评审 Generator 写的测试，列分支/异常/边界，专补 edge case。Generator-Evaluator 分离防乐观。</p>
+      <div class="impact"><p>测试数 3 → 21，覆盖矩阵化</p></div>
+    </div>
+    <div class="opt-card">
+      <h4>③ Stryker Mutation Testing</h4>
+      <p>故意改坏代码看测试能否发现。比行覆盖率准 10 倍。失败时 AI 自动循环回 ② 补测试。</p>
+      <div class="impact"><p>揭穿水测试 + 暴露死代码</p></div>
+    </div>
+  </div>
+  <div class="summary">
+    <p>核心：不阻拦工程师写代码 — 全是写完之后的反馈。一周内可上，~30 行配置改动。</p>
+  </div>
+</div>
+</body>
+</html>
