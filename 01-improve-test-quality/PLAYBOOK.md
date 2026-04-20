@@ -15,7 +15,7 @@
 
 **说**：
 
-> 我们模拟一个真实的小米/极氪场景。PM 在 Slack 发一句话："智能助手要支持开关车窗，4 个窗位"。开发者用 Claude Code + OpenSpec 接需求，先 propose。
+> 我们模拟一个真实的车企智能助手场景。PM 在 Slack 发一句话："智能助手要支持开关车窗，4 个窗位"。开发者用 Claude Code + OpenSpec 接需求，先 propose。
 
 **展示**：
 

@@ -3,12 +3,12 @@ const html2pptx = require('/Users/yunfeilu/.claude/plugins/cache/anthropic-agent
 const path = require('path');
 
 const SLIDES_DIR = path.join(__dirname, 'slides');
-const OUTPUT = path.join(__dirname, 'zeekr-sdd-workshop.pptx');
+const OUTPUT = path.join(__dirname, 'sdd-workshop.pptx');
 
-// 客户品牌占位 — 拿到真 logo 后替换为 slide.addImage({ path: ZEEKR_LOGO, ... })
+// 客户品牌占位 — 拿到真 logo 后替换为 slide.addImage({ path: CLIENT_LOGO, ... })
 function addClientBrand(slide, isCover) {
   if (isCover) {
-    slide.addText("GEELY × ZEEKR", {
+    slide.addText("OEM CUSTOMER", {
       x: 6.6, y: 0.4, w: 3.2, h: 0.5,
       fontSize: 22, color: "0EEDAF", bold: true, fontFace: "Arial",
       align: "right", valign: "middle"
@@ -19,7 +19,7 @@ function addClientBrand(slide, isCover) {
       align: "right", valign: "middle"
     });
   } else {
-    slide.addText("GEELY × ZEEKR", {
+    slide.addText("OEM CUSTOMER", {
       x: 7.6, y: 0.18, w: 2.1, h: 0.3,
       fontSize: 11, color: "0EEDAF", bold: true, fontFace: "Arial",
       align: "right", valign: "middle"
@@ -32,7 +32,7 @@ function addBranding(slide, pptx, isCover = false) {
     x: 0, y: 5.52, w: 10, h: 0.03,
     fill: { color: "0EEDAF" }
   });
-  slide.addText("Workshop · Yunfei Lu (AWS) × Zeekr · 2026-04", {
+  slide.addText("Workshop · Yunfei Lu (AWS) · 2026-04", {
     x: 0.5, y: 5.32, w: 6, h: 0.2,
     fontSize: 6, color: "6B7280", fontFace: "Arial"
   });
@@ -50,7 +50,7 @@ const SLIDES = [
   },
   {
     file: 'slide03-pain.html',
-    notes: `这是 demo 实测数字（非 mock）。重点：行覆盖率 96% 是漂亮的假象，mutation 64% 才是真实的测试有效率。右边的根因引自黄卓斌 AIDLC 讲稿 Q2——不是 AI 不会写测试，是"Agent 自评总是过于乐观"（Anthropic demystifying-evals 原话）。提问：你们现在 PR review 看不看 mutation score？`
+    notes: `这是 demo 实测数字（非 mock）。重点：行覆盖率 96% 是漂亮的假象，mutation 64% 才是真实的测试有效率。右边的根因引自 AIDLC 讲稿 Q2——不是 AI 不会写测试，是"Agent 自评总是过于乐观"（Anthropic demystifying-evals 原话）。提问：你们现在 PR review 看不看 mutation score？`
   },
   {
     file: 'slide04-baseline.html',
@@ -98,7 +98,7 @@ async function build() {
   const pptx = new pptxgen();
   pptx.layout = 'LAYOUT_16x9';
   pptx.author = 'Yunfei Lu';
-  pptx.title = 'Claude Code SDD Workshop — Zeekr';
+  pptx.title = 'Claude Code SDD Workshop';
 
   for (const s of SLIDES) {
     const { slide } = await html2pptx(path.join(SLIDES_DIR, s.file), pptx);

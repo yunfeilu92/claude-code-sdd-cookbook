@@ -1,4 +1,4 @@
-# OpenSpec Agent Conventions — zeekr-intent-demo
+# OpenSpec Agent Conventions — oem-intent-demo
 
 ## Tasks 模板约定（核心 SDD 治理）
 
