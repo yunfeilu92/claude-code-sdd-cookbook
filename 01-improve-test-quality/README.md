@@ -58,9 +58,11 @@ npx stryker run
 
 **周四看数字**：你项目 baseline mutation score 大概率比 64% 还低。开始让 evaluator 跑。
 
-## 演示给客户 / 同事看
+## 真实项目长什么样
 
-完整 7 步演示话术：[PLAYBOOK.md](./PLAYBOOK.md)
+以上 5 分钟 demo 是构造的小例子（window control）用来跑通三件套。想看它在**真实 GitHub issue 修复流程里**怎么工作——同一个 Claude，主 session 写 28 测试觉得够了，`test-evaluator` subagent 独立 context 审一遍又加 26 条深度断言——看 [SAMPLE.md](./SAMPLE.md)。
+
+那份是 2026-04-20 修 [langgenius/dify#26285](https://github.com/langgenius/dify/issues/26285) 的完整流水账，含 Generator vs Evaluator 的具体测试清单、断言对比、以及诚实写下的 caveat（mutation 没跑的工程现实）。
 
 ## 它不解决什么
 
